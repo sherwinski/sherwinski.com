@@ -37,7 +37,8 @@ export default class Router {
     pageChecker: PageChecker;
     dynamicRoutes: DynamicRoutes;
     useFileSystemPublicRoutes: boolean;
-    constructor({ basePath, headers, fsRoutes, rewrites, redirects, catchAllRoute, dynamicRoutes, pageChecker, useFileSystemPublicRoutes, }: {
+    locales: string[];
+    constructor({ basePath, headers, fsRoutes, rewrites, redirects, catchAllRoute, dynamicRoutes, pageChecker, useFileSystemPublicRoutes, locales, }: {
         basePath: string;
         headers: Route[];
         fsRoutes: Route[];
@@ -47,6 +48,7 @@ export default class Router {
         dynamicRoutes: DynamicRoutes | undefined;
         pageChecker: PageChecker;
         useFileSystemPublicRoutes: boolean;
+        locales: string[];
     });
     setDynamicRoutes(routes?: DynamicRoutes): void;
     addFsRoute(fsRoute: Route): void;

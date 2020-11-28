@@ -40,6 +40,7 @@ export default class DevServer extends Server {
         pageChecker: import("../next-server/server/router").PageChecker;
         useFileSystemPublicRoutes: boolean;
         dynamicRoutes: import("../next-server/server/router").DynamicRoutes | undefined;
+        locales: string[];
         fsRoutes: import("../next-server/server/router").Route[];
     };
     protected generatePublicRoutes(): never[];

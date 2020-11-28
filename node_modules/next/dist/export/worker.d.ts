@@ -32,6 +32,7 @@ interface ExportPageResults {
     ampValidations: AmpValidation[];
     fromBuildExportRevalidate?: number;
     error?: boolean;
+    ssgNotFound?: boolean;
 }
 interface RenderOpts {
     runtimeConfig?: {
@@ -50,6 +51,7 @@ interface RenderOpts {
     fontManifest?: FontManifest;
     locales?: string[];
     locale?: string;
+    defaultLocale?: string;
 }
 export default function exportPage({ path, pathMap, distDir, outDir, pagesDataDir, renderOpts, buildExport, serverRuntimeConfig, subFolders, serverless, optimizeFonts, optimizeImages, }: ExportPageInput): Promise<ExportPageResults>;
 export {};

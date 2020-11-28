@@ -3,7 +3,6 @@ import React from 'react';
 import type Router from '../next-server/lib/router/router';
 import type { AppComponent, AppProps, PrivateRouteInfo } from '../next-server/lib/router/router';
 import type { NEXT_DATA } from '../next-server/lib/utils';
-import { StyleSheetTuple } from './page-loader';
 declare global {
     interface Window {
         __NEXT_HYDRATED?: boolean;
@@ -25,14 +24,10 @@ declare const _default: (opts?: {
 }) => Promise<import("../next-server/lib/mitt").MittEmitter | {
     emitter: import("../next-server/lib/mitt").MittEmitter;
     render: typeof render;
-    renderCtx: {
+    renderCtx: Pick<import("../next-server/lib/router/router").CompletePrivateRouteInfo, "error" | "__N_SSG" | "__N_SSP" | "Component" | "props" | "err"> & {
+        initial: true;
+    } & {
         App: React.ComponentType<AppProps>;
-        Component: React.ComponentType<{}>;
-        styleSheets: StyleSheetTuple[];
-        props: Record<string, any>;
-        err: (Error & {
-            statusCode?: number | undefined;
-        }) | undefined;
     };
 }>;
 export default _default;

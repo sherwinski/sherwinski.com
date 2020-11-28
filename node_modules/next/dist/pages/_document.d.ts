@@ -52,6 +52,6 @@ export declare class NextScript extends Component<OriginProps> {
     getDynamicChunks(files: DocumentFiles): (JSX.Element | null)[];
     getScripts(files: DocumentFiles): JSX.Element[];
     getPolyfillScripts(): JSX.Element[];
-    static getInlineScriptSource(documentProps: DocumentProps): string;
+    static getInlineScriptSource(documentProps: Readonly<DocumentProps>): string;
     render(): JSX.Element | null;
 }

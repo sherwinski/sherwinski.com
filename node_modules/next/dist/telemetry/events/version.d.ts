@@ -10,9 +10,20 @@ declare type EventCliSessionStarted = {
     buildTarget: string;
     hasWebpackConfig: boolean;
     hasBabelConfig: boolean;
+    basePathEnabled: boolean;
+    i18nEnabled: boolean;
+    imageEnabled: boolean;
+    locales: string | null;
+    localeDomainsCount: number | null;
+    localeDetectionEnabled: boolean | null;
+    imageDomainsCount: number | null;
+    imageSizes: string | null;
+    imageLoader: string | null;
+    trailingSlashEnabled: boolean;
+    reactStrictMode: boolean;
 };
 declare type NextConfigurationPhase = typeof PHASE_DEVELOPMENT_SERVER | typeof PHASE_PRODUCTION_BUILD | typeof PHASE_EXPORT;
-export declare function eventCliSession(phase: NextConfigurationPhase, dir: string, event: Omit<EventCliSessionStarted, 'nextVersion' | 'nodeVersion' | 'hasNextConfig' | 'buildTarget' | 'hasWebpackConfig' | 'hasBabelConfig'>): {
+export declare function eventCliSession(phase: NextConfigurationPhase, dir: string, event: Omit<EventCliSessionStarted, 'nextVersion' | 'nodeVersion' | 'hasNextConfig' | 'buildTarget' | 'hasWebpackConfig' | 'hasBabelConfig' | 'basePathEnabled' | 'i18nEnabled' | 'imageEnabled' | 'locales' | 'localeDomainsCount' | 'localeDetectionEnabled' | 'imageDomainsCount' | 'imageSizes' | 'imageLoader' | 'trailingSlashEnabled' | 'reactStrictMode'>): {
     eventName: string;
     payload: EventCliSessionStarted;
 }[];
