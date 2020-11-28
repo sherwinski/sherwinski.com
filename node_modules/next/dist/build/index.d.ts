@@ -19,6 +19,7 @@ export declare type PrerenderManifest = {
     dynamicRoutes: {
         [route: string]: DynamicSsgRoute;
     };
+    notFoundRoutes: string[];
     preview: __ApiPreviewProps;
 };
 export default function build(dir: string, conf?: null, reactProductionProfiling?: boolean, debugOutput?: boolean): Promise<void>;

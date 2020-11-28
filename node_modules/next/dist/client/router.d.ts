@@ -17,7 +17,6 @@ export declare const createRouter: (pathname: string, query: import("querystring
     initialProps: any;
     pageLoader: any;
     Component: React.ComponentType<{}>;
-    initialStyleSheets: import("./page-loader").StyleSheetTuple[];
     App: React.ComponentType<import("../next-server/lib/router/router").AppProps>;
     wrapApp: (App: React.ComponentType<import("../next-server/lib/router/router").AppProps>) => any;
     err?: Error | undefined;

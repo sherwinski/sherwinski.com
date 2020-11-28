@@ -1,6 +1,5 @@
 /// <reference types="react" />
-import { HeadEntry } from '../next-server/lib/utils';
-export default function initHeadManager(initialHeadEntries: HeadEntry[]): {
+export default function initHeadManager(): {
     mountedInstances: Set<unknown>;
     updateHead: (head: JSX.Element[]) => void;
 };

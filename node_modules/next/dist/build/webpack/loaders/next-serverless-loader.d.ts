@@ -6,6 +6,7 @@ export declare type ServerlessLoaderQuery = {
     absoluteAppPath: string;
     absoluteDocumentPath: string;
     absoluteErrorPath: string;
+    absolute404Path: string;
     buildId: string;
     assetPrefix: string;
     generateEtags: string;

@@ -50,9 +50,6 @@ export declare type BaseContext = {
     res?: ServerResponse;
     [k: string]: any;
 };
-export declare type HeadEntry = [string, {
-    [key: string]: any;
-}];
 export declare type NEXT_DATA = {
     props: Record<string, any>;
     page: string;
@@ -74,7 +71,6 @@ export declare type NEXT_DATA = {
     customServer?: boolean;
     gip?: boolean;
     appGip?: boolean;
-    head: HeadEntry[];
     locale?: string;
     locales?: string[];
     defaultLocale?: string;

@@ -19,6 +19,9 @@ declare type EventBuildOptimized = {
     hasTestPages: boolean;
     hasStatic404: boolean;
     hasReportWebVitals: boolean;
+    headersCount: number;
+    rewritesCount: number;
+    redirectsCount: number;
 };
 export declare function eventBuildOptimize(pagePaths: string[], event: Omit<EventBuildOptimized, 'totalPageCount' | 'hasDunderPages' | 'hasTestPages'>): {
     eventName: string;
