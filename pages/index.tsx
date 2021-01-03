@@ -36,10 +36,13 @@ const Blog = ({ allPosts }: Props) => {
           <nav>
             <ul>
               <li>
-                <a href="https://github.com/sherwinski">GitHub</a>
+                <a href="#blog">Blog</a>
               </li>
               <li>
                 <a href="/gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="https://github.com/sherwinski">GitHub</a>
               </li>
             </ul>
           </nav>
@@ -47,7 +50,9 @@ const Blog = ({ allPosts }: Props) => {
       </div>
       <Layout>
         <Container>
-          <Intro />
+          <Intro
+            id={"blog"}
+          />
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
