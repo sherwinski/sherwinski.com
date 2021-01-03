@@ -1,12 +1,13 @@
 type Props = {
-  name: string
+  name?: string
   picture: string
+  id?: string
 }
 
-const Avatar = ({ name, picture }: Props) => {
+const Avatar = ({ name, picture, id }: Props) => {
   return (
     <div className="flex items-center">
-      <img src={picture} className="w-12 h-12 rounded-full mr-4" alt={name} />
+      <img src={picture} id={id} className="w-64 h-64 rounded-full" alt={name} />
       <div className="text-xl font-bold">{name}</div>
     </div>
   )
