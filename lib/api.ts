@@ -45,3 +45,18 @@ export function getAllPosts(fields: string[] = []) {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts
 }
+
+// leverages the imgix management API to retrieve image paths
+export function getAllImages() {
+  const ImgixAPI = require('imgix-management-js');
+
+  if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  }
+
+  const source = new ImgixAPI({
+      apiKey: process.env.IMGIX_API_KEY
+    });
+
+  return source.request(`sources/${process.env.SOURCE_ID}/assets?filter[origin_path]=dev/dotfiles`);
+}

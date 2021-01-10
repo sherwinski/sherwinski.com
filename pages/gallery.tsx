@@ -1,6 +1,13 @@
 import Image from 'next/image';
+import { getAllImages } from '../lib/api';
 
-export default function Gallery() {
+type Props = {
+    data: any,
+    included: any,
+    jsonapi: any,
+    meta: any,
+}
+export default function Gallery(allImages: Props) {
     return (
         <>
             <div id="gallery">            
@@ -34,3 +41,11 @@ export default function Gallery() {
         </>
     )
 }
+
+export const getStaticProps = async () => {
+    const images = await getAllImages();
+
+    return {
+        props: { images }
+    }
+};
