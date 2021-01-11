@@ -24,8 +24,7 @@ const Blog = ({ allPosts }: Props) => {
         </Head>
         <header id="header">
           <Avatar
-              id={"avatar"}
-              picture={"https://ontologic.imgix.net/edit.png"}
+              picture={"edit.png"}
           />
           <div className="content">
             <div className="inner">
