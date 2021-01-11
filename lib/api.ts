@@ -58,5 +58,5 @@ export function getAllImages() {
       apiKey: process.env.IMGIX_API_KEY
     });
 
-  return source.request(`sources/${process.env.SOURCE_ID}/assets?filter[origin_path]=dev/dotfiles`);
+  return source.request(`sources/${process.env.SOURCE_ID}/assets?filter[origin_path]=${process.env.ORIGIN_PATH}`);
 }
