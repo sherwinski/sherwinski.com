@@ -28,8 +28,8 @@ const Blog = ({ allPosts }: Props) => {
           />
           <div className="content">
             <div className="inner">
-              <h1>Welcome 👋</h1>
-              <p>Here's a space for my thoughts and random film photography.</p>
+              <h2>Welcome</h2>
+              <p>A space for my thoughts and film photography</p>
             </div>
           </div>
           <nav>
