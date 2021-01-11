@@ -1,8 +1,8 @@
-import Image from 'next/image';
+import Album from '../components/album';
 import { getAllImages } from '../lib/api';
 
 type Props = {
-    data: any,
+    data: string[],
     included: any,
     jsonapi: any,
     meta: any,
@@ -10,34 +10,12 @@ type Props = {
 export default function Gallery(allImages: Props) {
     return (
         <>
-            <div id="gallery">            
-                <ul>
-                    <li>
-                        <Image
-                            src="/nz1.jpg"
-                            layout="intrinsic"
-                            width={330}
-                            height={500}
-                        />
-                    </li>
-                    <li>
-                        <Image
-                            src="/nz2.jpg"
-                            layout="intrinsic"
-                            width={330}
-                            height={500}
-                        />
-                    </li>
-                    <li>
-                        <Image
-                            src="/nz3.jpg"
-                            layout="intrinsic"
-                            width={600}
-                            height={400}
-                        />
-                    </li>
-                </ul>
-            </div>
+            {
+                allImages.data.length > 0 &&
+                <Album
+                    paths={allImages.data}
+                />
+            }
         </>
     )
 }
@@ -46,6 +24,6 @@ export const getStaticProps = async () => {
     const images = await getAllImages();
 
     return {
-        props: { images }
+        props: images
     }
 };
