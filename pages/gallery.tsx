@@ -1,5 +1,6 @@
 import Album from '../components/album';
 import { getAllImages } from '../lib/api';
+import Layout from '../components/layout';
 
 type Props = {
     data: string[],
@@ -10,12 +11,14 @@ type Props = {
 export default function Gallery(allImages: Props) {
     return (
         <>
-            {
-                allImages.data.length > 0 &&
-                <Album
-                    paths={allImages.data}
-                />
-            }
+            <Layout>
+                {
+                    allImages.data.length > 0 &&
+                    <Album
+                        paths={allImages.data}
+                    />
+                }
+            </Layout>
         </>
     )
 }
