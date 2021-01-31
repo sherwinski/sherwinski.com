@@ -1,6 +1,6 @@
 module.exports = {
     images: {
         loader: 'imgix',
-        path: 'https://ontologic.imgix.net/',
+        path: 'https://sherwinski.imgix.net/',
     },
 }
