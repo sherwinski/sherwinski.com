@@ -60,3 +60,11 @@ export function getAllImages() {
 
   return source.request(`sources/${process.env.SOURCE_ID}/assets?filter[origin_path]=${process.env.ORIGIN_PATH}`);
 }
+
+export function getDomain() {
+  if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  }
+
+  return process.env.DOMAIN;
+}
