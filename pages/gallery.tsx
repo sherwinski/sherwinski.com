@@ -14,15 +14,15 @@ type ImageProps = {
     meta: any,
 }
 
-export default function Gallery(allImages: Props) {
+export default function Gallery({ domain, images}: Props) {
     return (
         <>
             <Layout>
                 {
-                    allImages.images.data.length > 0 &&
+                    images.data.length > 0 &&
                     <Album
-                        paths={allImages.images.data}
-                        domain={allImages.domain}
+                        paths={images.data}
+                        domain={domain}
                     />
                 }
             </Layout>
@@ -31,8 +31,8 @@ export default function Gallery(allImages: Props) {
 }
 
 export const getStaticProps = async () => {
-    const images = await getAllImages();
     const domain = getDomain();
+    const images = await getAllImages();
 
     return {
         props: {
