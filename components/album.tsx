@@ -30,7 +30,7 @@ export default function Album({ paths, domain }: Props) {
                     paths
                     .filter((path: any) => path.attributes.origin_path != "/com/") // TODO: remove this line after this erroneous entity is removed from the imgix IM
                     .map((path: any) => (
-                            <li className="gallery-images">
+                            <li className="gallery-images" key={path.attributes.origin_path}>
                                 <a className="luminous-gallery" href={domain+path.attributes.origin_path+"?auto=format,compress&w=1200"}>
                                     <Image
                                         src={path.attributes.origin_path}
