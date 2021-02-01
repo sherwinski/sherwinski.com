@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import { LuminousGallery } from 'luminous-lightbox';
 import { useEffect } from 'react';
+// @ts-ignore
+import { LuminousGallery } from 'luminous-lightbox';
+
+type ApiAttributes = {
+        origin_path: string,
+}
 
 type Path = {
     attributes: {

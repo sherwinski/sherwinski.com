@@ -33,6 +33,7 @@ export default function Gallery(allImages: Props) {
 export const getStaticProps = async () => {
     const images = await getAllImages();
     const domain = getDomain();
+
     return {
         props: {
             images: images,
