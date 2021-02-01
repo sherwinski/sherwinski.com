@@ -4,6 +4,7 @@
 
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+@import "../node_modules/luminous-lightbox/dist/luminous-basic.css";
 
 	body {
 		background: #1b1f22;
@@ -209,10 +210,17 @@
 		padding-left: 1em;
 	}
 
+		ul li.gallery-images {
+			padding: 0.25em 0.25em;
+		}
+
 		ul li {
 			padding-left: 0.5em;
 		}
 
+		#gallery ul {
+			padding: 1em 0.5em;
+		}
 /* Header */
 
 	#header {
@@ -656,4 +664,15 @@
 		min-width: 100%;
 		object-fit: cover;
 		vertical-align: bottom;
+	}
+
+	/* lightbox image */
+	img.lum-img {
+		display: initial;
+	}
+
+	a.luminous-gallery {
+		position: relative;
+		width: 500px;
+		height: 300px;
 	}
