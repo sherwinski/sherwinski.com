@@ -1,5 +1,3 @@
-import { CMS_NAME } from '../lib/constants'
-
 type Props = {
   id?: string
 }
