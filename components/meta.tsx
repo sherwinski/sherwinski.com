@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import { HOME_OG_IMAGE_URL } from '../lib/constants'
 
 const Meta = () => {
   return (
@@ -32,12 +32,24 @@ const Meta = () => {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+
       <meta
         name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
+        content="sherwinski.com - A personal website for random musings and film photography"
       />
+      <meta name="keywords" content="sherwinski.com GitHub blog nextjs photography imgix" />
+      <meta property="og:title" content="sherwinski.com" />
+      <meta property="og:description" content="Random musings and film photography" />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta property="og:url" content="https://www.sherwinski.com" />
+
+      <meta property="twitter:title" content="sherwinski.com" />
+      <meta property="twitter:description" content="A personal website for random musings and film photography" />
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:image" content={HOME_OG_IMAGE_URL} />
+
       <script async defer data-domain="sherwinski.com" src="https://plausible.io/js/plausible.js"></script>
+      <script async defer data-domain="sherwinski.com" src="https://stats.sherwinski.com/js/index.js"></script>
     </Head>
   )
 }
