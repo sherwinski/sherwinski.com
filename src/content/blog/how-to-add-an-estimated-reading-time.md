@@ -101,10 +101,10 @@ export const getReadingTime = async () => {
   const mapFrontmatter = new Map();
   const globPostsValues = Object.values(globPosts);
   await Promise.all(
-    globPostsValues.map(async globPost => {
+    globPostsValues.map(async (globPost) => {
       const { frontmatter } = await globPost();
       mapFrontmatter.set(slugify(frontmatter), frontmatter.readingTime);
-    })
+    }),
   );
 
   return mapFrontmatter;
@@ -112,7 +112,7 @@ export const getReadingTime = async () => {
 
 const getPostsWithRT = async (posts: CollectionEntry<"blog">[]) => {
   const mapFrontmatter = await getReadingTime();
-  return posts.map(post => {
+  return posts.map((post) => {
     post.data.readingTime = mapFrontmatter.get(slugify(post.data));
     return post;
   });
@@ -182,7 +182,7 @@ const getSortedPosts = async (posts: CollectionEntry<"blog">[]) => {
     .sort(
       (a, b) =>
         Math.floor(new Date(b.data.pubDatetime).getTime() / 1000) -
-        Math.floor(new Date(a.data.pubDatetime).getTime() / 1000)
+        Math.floor(new Date(a.data.pubDatetime).getTime() / 1000),
     );
 };
 
