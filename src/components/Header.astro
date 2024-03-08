@@ -4,7 +4,7 @@ import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
 export interface Props {
-  activeNav?: "home" | "posts" | "tags" | "search";
+  activeNav?: "home" | "posts" | "tags" | "gallery" | "search";
 }
 
 const { activeNav } = Astro.props;
@@ -55,6 +55,11 @@ const { activeNav } = Astro.props;
             </a>
           </li>
           <li>
+            <a href="/gallery" class={activeNav === "gallery" ? "active" : ""}>
+              Gallery
+            </a>
+          </li>
+          <li>
             <LinkButton
               href="/search"
               className={`focus-outline p-3 sm:p-1 ${
@@ -101,7 +106,7 @@ const { activeNav } = Astro.props;
 
 <style>
   #skip-to-content {
-    @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
+    @apply bg-skin-accent text-skin-inverted absolute -top-full left-16 z-50 px-3 py-2 transition-all focus:top-4;
   }
   .nav-container {
     @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;
@@ -116,7 +121,7 @@ const { activeNav } = Astro.props;
     @apply self-end p-2 sm:hidden;
   }
   .hamburger-menu svg {
-    @apply h-6 w-6 scale-125 fill-skin-base;
+    @apply fill-skin-base h-6 w-6 scale-125;
   }
 
   nav {
@@ -129,7 +134,7 @@ const { activeNav } = Astro.props;
     @apply col-span-2 flex items-center justify-center;
   }
   nav ul li a {
-    @apply w-full px-4 py-3 text-center font-medium hover:text-skin-accent sm:my-0 sm:px-2 sm:py-1;
+    @apply hover:text-skin-accent w-full px-4 py-3 text-center font-medium sm:my-0 sm:px-2 sm:py-1;
   }
   nav ul li:nth-last-child(2) a {
     @apply w-auto;
@@ -149,7 +154,7 @@ const { activeNav } = Astro.props;
     @apply p-1;
   }
   nav button svg {
-    @apply h-6 w-6 fill-skin-base hover:fill-skin-accent;
+    @apply fill-skin-base hover:fill-skin-accent h-6 w-6;
   }
   #theme-btn {
     @apply p-3 sm:p-1;
@@ -185,7 +190,7 @@ const { activeNav } = Astro.props;
       menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true");
       menuBtn.setAttribute(
         "aria-label",
-        menuExpanded ? "Open Menu" : "Close Menu"
+        menuExpanded ? "Open Menu" : "Close Menu",
       );
       menuItems?.classList.toggle("display-none");
     });
